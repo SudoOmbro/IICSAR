@@ -22,16 +22,16 @@ Enjoy lol
 - monsters and players now won't delete the floor by walking on it.
 - added gold as currency (it has no use for now), monsters can drop it.
 
-### version 1.2 (12/04/2016)
+### version 1.2 (12/04/2015)
 
 - added the possibility to insert seeds.
 - improved the controls.
 
-### version 1.1 (10/04/2016)
+### version 1.1 (10/04/2015)
 
 - added a new dungeon generation system.
 - improved menus.
 
-### version 1.0 (08/04/2016)
+### version 1.0 (08/04/2015)
 
 - yay first release! :)
