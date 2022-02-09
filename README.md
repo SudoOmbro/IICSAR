@@ -3,6 +3,8 @@ an awful command line rougelike game i wrote in high school.
 
 I recently found the code for it in a random folder on my PC and decided to refactor and improve a fair bit of the code & to upload it to GitHub.
 
+I didn't dare touching the level generation system, it's barely functional but it works so i pulled a Mechanicus and treated it as Ancient technology.
+
 Enjoy lol
 
 
