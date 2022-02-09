@@ -34,12 +34,12 @@ void battle()
 	int player_heavy_attack_min_damage = player_light_attack_min_damage * heavy_attack_multiplier;
 	int player_heavy_attack_max_damage = player_light_attack_max_damage * heavy_attack_multiplier;
 	srand(time(NULL));
-	win=turn=ex=0;
-	enhp=flr*2+rand()%9;
-	ex+=enhp;
+	win = turn = ex = 0;
+	enhp = flr * 2 + rand()%9;
+	ex += enhp;
 	system("cls");
 	printf("you encounter a monster!\n");
-	yt=rand()%3;
+	yt = rand()%3; // determines if you start first, if 0 the enemy starts first
 	while(win==0)
 	{
 		turn+=1;
@@ -115,7 +115,7 @@ void battle()
 			b=1;
 			printf("you have been killed by the monster!\n");
 		}
-		if (enhp<=0)
+		else if (enhp<=0)
 		{
 			win=1;
 			ex+=lv*2+rand()%21;
@@ -123,8 +123,7 @@ void battle()
 			gold += gained_gold;
 			xp += ex;
 			printf("you won! you gained %d experience and %d gold!\n", ex, gained_gold);
-			temp=rand()%101;
-			if (temp<=50)
+			if (roll(50))
 			{
 				npt+=1;
 				printf("the enemy also dropped you a potion!\n");
@@ -580,8 +579,7 @@ int main()
 	stamp();
 	while(b==0)
 	{
-	    m=0;
-	    printf("\nhp: %d/%d lv: %d exp: %d/%d potions: %d  pos: y %d, x %d  gold: %d  \n", hp, mhp, lv, xp, mxp, npt, x, y, gold);
+		printf("\nhp: %d/%d lv: %d exp: %d/%d potions: %d  pos: y %d, x %d  gold: %d  \n", hp, mhp, lv, xp, mxp, npt, x, y, gold);
 		printf("\nwhere do you want to move? (W=up S=down D=right A=left) \npress P to use a potion\n");
 		switch (_getch())
 		{
@@ -625,7 +623,3 @@ int main()
 	system("pause");
 	goto inizio;
 }
-
-
-
-
