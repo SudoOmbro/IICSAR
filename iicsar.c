@@ -156,11 +156,10 @@ bool use_gold(int needed_amount)
 
 void merchant()
 {
-	int act, done;
-	done = 0;
+	int act;
 	system("cls");
 	printf("welcome to a shop!");
-	while (done == 0) 
+	while (true) 
 	{
 		printf("\nHowdy adventurer! do you want to buy anything? (your gold: %d)\n", gold);
 		printf("1 - potion - 70 gold\n");
@@ -197,7 +196,7 @@ void merchant()
 				break;
 			case 4:
 				printf("you went away.");
-				done = 1;
+				return;
 				break;
 			default:
 				printf("invalid action\n");
@@ -599,14 +598,22 @@ int main()
 			{
 				if (npt>0)
 				{
-					npt -= 1;
-					hp = mhp;
-					printf("you used a potion, your hp were maxed out!\n");
-					system("pause");
+					if (hp == mhp) 
+					{
+						printf("Your HP is already maxed out!\n");
+						system("pause");
+					}
+					else
+					{
+						npt -= 1;
+						hp = mhp;
+						printf("you used a potion, your HP were maxed out!\n");
+						system("pause");
+					}
 				}
 				else 
 				{
-					printf("you have no potions!\n");
+					printf("you have no potions left!\n");
 					system("pause");
 				}
 				break;
@@ -623,3 +630,4 @@ int main()
 	system("pause");
 	goto inizio;
 }
+
